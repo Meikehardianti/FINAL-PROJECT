@@ -40,7 +40,7 @@ void input(int x){
     printf("Masukkan Nama Pasien                : ",x+1);fflush(stdin); gets(dt[x].pas.nama);
     printf("Masukkan Jenis Penyakit		    : ",x+1);fflush(stdin); gets(dt[x].pas.jenis_penyakit);
     printf("Masukkan Jenis Kamar		    : ",x+1);fflush(stdin); gets(dt[x].jenis_kamar);
-	printf("Masukkan Nomor Kamar		    : ",x+1);fflush(stdin); scanf("%d",&dt[x].no_kamar);
+    printf("Masukkan Nomor Kamar		    : ",x+1);fflush(stdin); scanf("%d",&dt[x].no_kamar);
     printf("Masukkan Tanggal Masuk(1-31)        : ",x+1);fflush(stdin); scanf("%d",&dt[x].tgl.tanggal);
     printf("Masukkan Bulan Masuk		    : ",x+1);fflush(stdin); scanf("%d",&dt[x].tgl.bulan);
     printf("Masukkan tahun masuk		    : ",x+1);fflush(stdin); scanf("%d",&dt[x].tgl.tahun);
@@ -51,17 +51,17 @@ void view(int x){
 		printf("         Data Pasien ke-%d \n",x+1);
 		printf("_______________________________________\n");
 		printf("\nId_Pasien         	: %d",dt[x].pas.id_pasien);
-	    printf("\nNama Pasien             : %s",dt[x].pas.nama);
-	    printf("\nJenis Penyakit       	: %s",dt[x].pas.jenis_penyakit);
-	    printf("\nJenis Kamar		: %s",dt[x].jenis_kamar);
+	        printf("\nNama Pasien             : %s",dt[x].pas.nama);
+	        printf("\nJenis Penyakit       	: %s",dt[x].pas.jenis_penyakit);
+	        printf("\nJenis Kamar		: %s",dt[x].jenis_kamar);
 		printf("\nNomor Kamar		: %d",dt[x].no_kamar);
-	    printf("\ntanggal masuk		: %d-%d-%d\n",dt[x].tgl.tanggal,dt[x].tgl.bulan,dt[x].tgl.tahun);
+	        printf("\ntanggal masuk		: %d-%d-%d\n",dt[x].tgl.tanggal,dt[x].tgl.bulan,dt[x].tgl.tahun);
 }
 
 void update(int x){
 		printf("Ubah Id_Pasien		: ");fflush(stdin); scanf("%d",&dt[x].pas.id_pasien);
-	    printf("Ubah Nama Pasien	: ");fflush(stdin); gets(dt[x].pas.nama);
-	    printf("Ubah Jenis Penyakit	: ");fflush(stdin); gets(dt[x].pas.jenis_penyakit);
+	        printf("Ubah Nama Pasien	: ");fflush(stdin); gets(dt[x].pas.nama);
+	        printf("Ubah Jenis Penyakit	: ");fflush(stdin); gets(dt[x].pas.jenis_penyakit);
 		printf("Ubah Jenis Kamar	: ");fflush(stdin); scanf("%s",&dt[x].jenis_kamar);
 		printf("Ubah Nomor Kamar	: ");fflush(stdin); scanf("%d",&dt[x].no_kamar);
 		printf("Ubah Tanggal Masuk	: ");fflush(stdin); scanf("%d",&dt[x].tgl.tanggal);
@@ -149,7 +149,7 @@ void insertionsortnama(	dat arr[],int n){
 }
 
 void insertionshortid_pasien(dat arr[],int n){
-	int i, j;
+    int i, j;
     dat key;
     for(i = 1; i < n; i++)
     {
@@ -164,7 +164,7 @@ void insertionshortid_pasien(dat arr[],int n){
 }
 
 void insertionshortno_kamar(dat arr[],int n){
-	int i, j;
+    int i, j;
     dat key;
     for(i = 1; i < n; i++)
     {
@@ -179,7 +179,7 @@ void insertionshortno_kamar(dat arr[],int n){
 }
 
 void insertionsortj_kamar(dat arr[],int n){
-	int i, j;
+    int i, j;
     dat key;
     for(i = 1; i < n; i++)
     {
@@ -252,9 +252,9 @@ int main(){
 		printf("\n\t\tSEARCH DATA PASIEN\n");
 		printf("\n ================================================\n");
 		printf("\t1. Pencarian Berdasarkan ID Pasien \n");
-    	printf("\t2. Pencarian Berdasarkan Nama Pasien \n");
-    	printf("\t3. Pencarian Berdasarkan Nomor Kamar \n");
-    	printf("\t4. Kembali ke Menu Utama");
+    	        printf("\t2. Pencarian Berdasarkan Nama Pasien \n");
+    	        printf("\t3. Pencarian Berdasarkan Nomor Kamar \n");
+    	        printf("\t4. Kembali ke Menu Utama");
 		printf("\nPilih Menu : "); scanf("%d",&search);
 	}
 	void pilihan_sort(){
@@ -262,7 +262,7 @@ int main(){
 		printf("\n\t\tSORT DATA PASIEN\n");
 		printf("\n ================================================\n");
 		printf("\t1. Pengurutan Berdasarkan Nama Pasien \n");
-    	printf("\t2. Pengurutan Berdasarkan ID Pasien \n");
+    	        printf("\t2. Pengurutan Berdasarkan ID Pasien \n");
    		printf("\t3. Pengurutan Berdasarkan Jenis Penyakit \n");
    		printf("\t4. Pengurutan Berdasarkan Jenis Kamar \n");
    		printf("\t5. Pengurutan Berdasarkan Nomor Kamar \n");
