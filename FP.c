@@ -27,7 +27,13 @@ dat dt[100];
 
 void input();
 void view ();
-
+void update ();
+void insertionsortnama ();
+void insertionshortid_pasien ();
+void insertionshortno_kamar ();
+void insertionsortj_kamar ();
+void insertionsortj_penyakit ();
+void insertionsorttgl_masuk ();
 
 void input(int x){
     printf("Masukkan Id_Pasien	    	    : ",x+1);fflush(stdin); scanf("%d",&dt[x].pas.id_pasien);
@@ -91,12 +97,12 @@ int jumpsearch_namapasien(dat dt[],int size, char cari_nama[]){
 	{
 		target++;
 	}
-	while (strcmp(dt[mulai].pas.nama,cari_nama) != 0 && target>mulai) //loncat
+	while (strcmp(dt[mulai].pas.nama,cari_nama) != 0 && target>mulai)
 	{
 		mulai += end;
 	}
 	
-	mulai = mulai - end; // mundur 
+	mulai = mulai - end;
 	
 	for(i=mulai; i<=target; i++){
 		
@@ -108,22 +114,22 @@ int jumpsearch_namapasien(dat dt[],int size, char cari_nama[]){
 	return -1;
 }
 
-int jumpsearch_nokamar(dat dt[],int size,int cari){ //tidak bisa
+int jumpsearch_nokamar(dat dt[],int size,int cari){ 
 	int i;
-	int mulai=0;
-	int end = sqrt(size);
+	int mulai =0;
+	int end = sqrt (size);
 	
-	while(dt[end].no_kamar <= cari && end < size)
+	while (dt[end].no_kamar <= cari && end < size)
 	{
 		mulai=end;
 		end += sqrt(size);
 	}
 	for(i=mulai; i<end; i++){
-		if(dt[i].no_kamar == cari){
+		if(dt[i].no_kamar==cari){
 			return i;
 		}
-		return -1;
 	}
+	return -1;
 }
 
 void insertionsortnama(	dat arr[],int n){
@@ -225,13 +231,11 @@ void insertionsorttgl_masuk(dat arr [],int n){
 int main(){
 		
 	int i,j,menu,search,sort,n=0,gap,temp,ubah;
-
-
-
+	
 	void pilihan_menu(){
 		system("color F4");
 		printf("\n ==================================================================");
-		printf("\n\t\t\t     PROGRAM APLIKASI");
+		printf("\n\t\t\t   PROGRAM APLIKASI");
 		printf("\n\t\t\t PENDATAAN RUMAH SAKIT");
 		printf("\n ==================================================================");
 		printf("\n\n\t\t\t1. Input Data Pasien");
@@ -295,7 +299,6 @@ int main(){
 		}
 		else if(menu==3){
 			int cari_update;
-        		//system("cls");
         	printf("\t========================================\n");
 			printf("\t          UPDATE DATA PASIEN	\n");
 			printf("\t========================================\n");
@@ -305,7 +308,8 @@ int main(){
         		w=jumpsearch_idpasien(dt,n,cari_update);
         		if(w==-1){
         			getch();
-        			printf("\n DATA TIDAK DITEMUKAN");
+        			printf("\n DATA TIDAK DITEMUKAN !!!");
+        			break;
 				}
 				else
 				{
@@ -347,11 +351,10 @@ int main(){
 					
 					y=jumpsearch_namapasien(dt,n,cari_nama);
 					if(y == -1){
-						printf("NAMA PASIEN TIDAK DITEMUKAN\n");
+						printf("NAMA PASIEN TIDAK DITEMUKAN !!\n");
 					}
 					else
 					{
-						printf("Data Ketemu");
 						view(y);
 					}
 					getch();
@@ -384,12 +387,11 @@ int main(){
 		}
 		else if(menu==5){
 			do{
-			//	system("cls");
 				pilihan_sort();
 				if(sort==1){
         			printf("=======================================\n");
         			printf("		SORT DATA PASIEN	           \n");
-        			printf("	   *Berdasarkan Nama*	           \n");
+        			printf("	 *Berdasarkan Nama Pasien*         \n");
         			printf("=======================================\n");
 					
 					for(i=0;i<=n;i++){
@@ -422,7 +424,6 @@ int main(){
 					}for(i=0;i<n; i++){
 						view(i);
 					}
-					
 				}
 				else if(sort==4){
         			printf("=======================================\n");
@@ -461,9 +462,12 @@ int main(){
 					}
 				}
 			}while(sort!=7);
-			
+		}
+		else if(menu == 6){
+					printf("\n\nTERIMAKASIH TELAH MENGGUNAKAN PROGRAM KAMI :)    \n\n");					
+					break;
+				}
 			}
-		}while(menu!=0);
-		 printf("Inputan Salah");
+		while(menu!=0);
 }
 
